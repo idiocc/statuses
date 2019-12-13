@@ -16,6 +16,11 @@ yarn add @goa/statuses
 - [Codes Objects](#codes-objects)
   * [`STATUS_CODES`](#type-status_codes)
   * [`codes`](#type-codes)
+  * [status[code]](#statuscode)
+  * [status[message]](#statusmessage)
+  * [redirect[code]](#redirectcode)
+  * [empty[code]](#emptycode)
+  * [retry[code]](#retrycode)
 - [Copyright & License](#copyright--license)
 
 <p align="center"><a href="#table-of-contents">
@@ -223,6 +228,140 @@ console.log(codes)
   510,
   511 ]
 ```
+
+### status[code]
+
+Map of `code` to `status message`. Returns `undefined` for invalid codes.
+
+<table>
+<tr><th><a href="example/code.js">Source</a></th><th>Output</th></tr>
+<tr><td>
+
+```js
+import status from '@goa/statuses'
+
+console.log(status[404])
+```
+</td>
+<td>
+
+```js
+​
+
+Not Found
+```
+</td></tr>
+</table>
+
+### status[message]
+
+Map of `status message` to `code`. `msg` can either be title-cased or lower-cased. Returns `undefined` for invalid status messages.
+
+<table>
+<tr><th><a href="example/message.js">Source</a></th><th>Output</th></tr>
+<tr><td>
+
+```js
+import status from '@goa/statuses'
+
+console.log(status['not found'])
+console.log(status['Not Found'])
+```
+</td>
+<td>
+
+```js
+​
+
+404
+404
+```
+</td></tr>
+</table>
+
+### redirect[code]
+
+Returns `true` if a status code is a valid redirect status.
+
+<table>
+<tr><th><a href="example/redirect.js">Source</a></th><th>Output</th></tr>
+<tr><td>
+
+```js
+import { redirect } from '@goa/statuses'
+
+console.log(redirect[200])
+console.log(redirect[301])
+```
+</td>
+<td>
+
+```js
+​
+
+undefined
+true
+```
+</td></tr>
+</table>
+
+### empty[code]
+
+Returns `true` if a status code expects an empty body.
+
+<table>
+<tr><th><a href="example/empty.js">Source</a></th><th>Output</th></tr>
+<tr><td>
+
+```js
+import { empty } from '@goa/statuses'
+
+console.log(empty[200])
+console.log(empty[204])
+console.log(empty[304])
+```
+</td>
+<td>
+
+```js
+​
+
+undefined
+true
+true
+```
+</td></tr>
+</table>
+
+### retry[code]
+
+Returns `true` if you should retry the rest.
+
+<table>
+<tr><th><a href="example/retry.js">Source</a></th><th>Output</th></tr>
+<tr><td>
+
+```js
+import { retry } from '@goa/statuses'
+
+console.log(retry[501])
+console.log(retry[503])
+```
+</td>
+<td>
+
+```js
+​
+
+undefined
+true
+```
+</td></tr>
+</table>
+
+<p align="center"><a href="#table-of-contents">
+  <img src="/.documentary/section-breaks/3.svg?sanitize=true">
+</a></p>
 
 ## Copyright & License
 
