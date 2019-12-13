@@ -1,6 +1,6 @@
 {
   "name": "@goa/statuses",
-  "version": "0.0.0-pre",
+  "version": "1.0.0",
   "description": "HTTP status utility.",
   "main": "compile/index.js",
   "module": "src/index.js",
