@@ -5,12 +5,9 @@ const { _STATUS_CODES, _codes, _empty, _redirect,
  * Get the status code.
 
 Given a number, this will throw if it is not a known status code, otherwise the code will be returned. Given a string, the string will be parsed for a number and return the code if valid, otherwise will lookup the code assuming this is the status message.
- * @param {number|string} code The code or phrase.
- * @return {number}
+ * @type {(code: number|string) => number}
  */
-function status(code) {
-  return _status(code)
-}
+const status = _status
 
 /**
  * Returns an object which maps status codes to status messages, in the same format as the [Node.JS](https://nodejs.org/dist/latest/docs/api/http.html#http_http_status_codes) `http` module.

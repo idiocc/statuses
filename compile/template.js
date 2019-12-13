@@ -4,9 +4,7 @@ const { _STATUS_CODES, _codes, _empty, _redirect,
 /**
  * @methodType {_statuses.status}
  */
-function status(code) {
-  return _status(code)
-}
+const status = _status
 
 /**
  * Returns an object which maps status codes to status messages, in the same format as the [Node.JS](https://nodejs.org/dist/latest/docs/api/http.html#http_http_status_codes) `http` module.

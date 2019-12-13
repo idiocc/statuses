@@ -1,6 +1,6 @@
 import { equal, ok } from '@zoroaster/assert'
 import Context from '../context'
-import { STATUS_CODES, redirect, retry, empty } from '../../src'
+import status, { STATUS_CODES, redirect, retry, empty } from '../../src'
 
 /** @type {Object.<string, (c: Context)>} */
 const T = {
@@ -20,6 +20,9 @@ const T = {
     equal(empty[200], undefined)
     ok(empty[204])
     ok(empty[304])
+  },
+  'contains codes'() {
+    equal(status[200], 'OK')
   },
 }
 
