@@ -50,14 +50,22 @@ __<a name="type-config">`Config`</a>__: Options for the program.
 ```js
 import status from '@goa/statuses'
 
-status(403) // => 403
-status('403') // => 403
-status('forbidden') // => 403
-status('Forbidden') // => 403
-status(306) // throws, as it's not supported by node.js
+console.log(status(403)) // => 403
+console.log(status('403')) // => 403
+console.log(status('forbidden')) // => 403
+console.log(status('Forbidden')) // => 403
+try {
+  status(5000) // throws, as it's not supported by Node.JS
+} catch (err) {
+  console.log(err.message)
+}
 ```
 ```
-
+403
+403
+403
+403
+invalid status code: 5000
 ```
 
 <p align="center"><a href="#table-of-contents">
@@ -67,6 +75,8 @@ status(306) // throws, as it's not supported by node.js
 ## Copyright & License
 
 GNU Affero General Public License v3.0
+
+[Original work](https://github.com/jshttp/statuses#readme) by Jonathan Ong and Douglas Christopher Wilson under MIT license found in [COPYING](COPYING).
 
 <table>
   <tr>
