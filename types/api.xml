@@ -1,6 +1,6 @@
-<types namespace="_myNewPackage">
-  <method name="myNewPackage" async return="string">
-    <arg type="!_myNewPackage.Config" name="config">The config.</arg>
-    {{ description }}
+<types namespace="_statuses">
+  <method name="statuses" async return="string">
+    <arg type="!_statuses.Config" name="config">The config.</arg>
+    HTTP status utility.
   </method>
 </types>

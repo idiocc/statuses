@@ -1,11 +1,11 @@
-# my-new-package
+# @goa/statuses
 
-%NPM: my-new-package%
+%NPM: @goa/statuses%
 
-`my-new-package` is {{ description }}
+`@goa/statuses` is HTTP status utility.
 
 ```sh
-yarn add my-new-package
+yarn add @goa/statuses
 ```
 
 ## Table Of Contents

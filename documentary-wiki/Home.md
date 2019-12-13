@@ -1,1 +1,1 @@
-{{ description }}
+HTTP status utility.

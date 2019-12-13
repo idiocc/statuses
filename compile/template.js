@@ -1,12 +1,12 @@
-const { _myNewPackage } = require('./mnp')
+const { _statuses } = require('./statuses')
 
 /**
- * @methodType {_myNewPackage.myNewPackage}
+ * @methodType {_statuses.statuses}
  */
-function myNewPackage(config) {
-  return _myNewPackage(config)
+function statuses(config) {
+  return _statuses(config)
 }
 
-module.exports = myNewPackage
+module.exports = statuses
 
 /* typal types/index.xml namespace */

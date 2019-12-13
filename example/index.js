@@ -1,7 +1,7 @@
-import myNewPackage from '../src'
+import statuses from '../src'
 
 (async () => {
-  const res = await myNewPackage({
+  const res = await statuses({
     text: 'example',
   })
   console.log(res)

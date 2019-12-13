@@ -1,6 +1,6 @@
 import '../types/externs'
-import myNewPackage from './'
+import statuses from './'
 
 module.exports = {
-  '_myNewPackage': myNewPackage,
+  '_statuses': statuses,
 }
