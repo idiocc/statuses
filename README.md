@@ -1,6 +1,6 @@
 # @goa/statuses
 
-[![npm version](https://badge.fury.io/js/@goa/statuses.svg)](https://www.npmjs.com/package/@goa/statuses)
+[![npm version](https://badge.fury.io/js/%40goa%2Fstatuses.svg)](https://www.npmjs.com/package/@goa/statuses)
 
 `@goa/statuses` is HTTP status utility.
 
@@ -12,9 +12,8 @@ yarn add @goa/statuses
 
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
-- [`async statuses(config: !Config): string`](#async-mynewpackageconfig-config-string)
+- [`status(code: number|string): number`](#statuscode-numberstring-number)
   * [`Config`](#type-config)
-- [CLI](#cli)
 - [Copyright & License](#copyright--license)
 
 <p align="center"><a href="#table-of-contents">
@@ -33,10 +32,12 @@ import statuses from '@goa/statuses'
   <img src="/.documentary/section-breaks/1.svg?sanitize=true">
 </a></p>
 
-## <code>async <ins>statuses</ins>(</code><sub><br/>&nbsp;&nbsp;`config: !Config,`<br/></sub><code>): <i>string</i></code>
-HTTP status utility.
+## <code><ins>status</ins>(</code><sub><br/>&nbsp;&nbsp;`code: number|string,`<br/></sub><code>): <i>number</i></code>
+Get the status code.
 
- - <kbd><strong>config*</strong></kbd> <em><code><a href="#type-config" title="Options for the program.">!Config</a></code></em>: The config.
+Given a number, this will throw if it is not a known status code, otherwise the code will be returned. Given a string, the string will be parsed for a number and return the code if valid, otherwise will lookup the code assuming this is the status message.
+
+ - <kbd><strong>code*</strong></kbd> <em><code>(number \| string)</code></em>: The code or phrase.
 
 __<a name="type-config">`Config`</a>__: Options for the program.
 
@@ -47,18 +48,16 @@ __<a name="type-config">`Config`</a>__: Options for the program.
 | text      | <em>string</em>  | A text to return. | -       |
 
 ```js
-import statuses from '@goa/statuses'
+import status from '@goa/statuses'
 
-(async () => {
-  const res = await statuses({
-    text: 'example',
-  })
-  console.log(res)
-})()
+status(403) // => 403
+status('403') // => 403
+status('forbidden') // => 403
+status('Forbidden') // => 403
+status(306) // throws, as it's not supported by node.js
 ```
 ```
-@goa/statuses called with example
-example
+
 ```
 
 <p align="center"><a href="#table-of-contents">

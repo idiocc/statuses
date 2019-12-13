@@ -1,8 +1,12 @@
-'use strict';/*
- diff package https://github.com/kpdecker/jsdiff
- BSD License
- Copyright (c) 2009-2015, Kevin Decker <kpdecker@gmail.com>
+'use strict';var d={[100]:"Continue",[101]:"Switching Protocols",[102]:"Processing",[103]:"Early Hints",[200]:"OK",[201]:"Created",[202]:"Accepted",[203]:"Non-Authoritative Information",[204]:"No Content",[205]:"Reset Content",[206]:"Partial Content",[207]:"Multi-Status",[208]:"Already Reported",[226]:"IM Used",[300]:"Multiple Choices",[301]:"Moved Permanently",[302]:"Found",[303]:"See Other",[304]:"Not Modified",[305]:"Use Proxy",[306]:"(Unused)",[307]:"Temporary Redirect",[308]:"Permanent Redirect",
+[400]:"Bad Request",[401]:"Unauthorized",[402]:"Payment Required",[403]:"Forbidden",[404]:"Not Found",[405]:"Method Not Allowed",[406]:"Not Acceptable",[407]:"Proxy Authentication Required",[408]:"Request Timeout",[409]:"Conflict",[410]:"Gone",[411]:"Length Required",[412]:"Precondition Failed",[413]:"Payload Too Large",[414]:"URI Too Long",[415]:"Unsupported Media Type",[416]:"Range Not Satisfiable",[417]:"Expectation Failed",[418]:"I'm a teapot",[421]:"Misdirected Request",[422]:"Unprocessable Entity",
+[423]:"Locked",[424]:"Failed Dependency",[425]:"Unordered Collection",[426]:"Upgrade Required",[428]:"Precondition Required",[429]:"Too Many Requests",[431]:"Request Header Fields Too Large",[451]:"Unavailable For Legal Reasons",[500]:"Internal Server Error",[501]:"Not Implemented",[502]:"Bad Gateway",[503]:"Service Unavailable",[504]:"Gateway Timeout",[505]:"HTTP Version Not Supported",[506]:"Variant Also Negotiates",[507]:"Insufficient Storage",[508]:"Loop Detected",[509]:"Bandwidth Limit Exceeded",
+[510]:"Not Extended",[511]:"Network Authentication Required"};/*
+ statuses
+ Copyright(c) 2014 Jonathan Ong
+ Copyright(c) 2016 Douglas Christopher Wilson
+ MIT Licensed
 */
-const c={black:30,red:31,green:32,yellow:33,blue:34,magenta:35,cyan:36,white:37,grey:90};module.exports={_statuses:async function(a={}){const {shouldRun:d=!0,text:b=""}=a;if(d)return a=(a=c.yellow)?`\x1b[${a}m${b}\x1b[0m`:b,console.log("@goa/statuses called with %s",a),b}};
+const g=e();function e(){var a=h;const b=[];Object.keys(d).forEach(c=>{const f=d[c];c=Number(c);a[c]=f;a[f]=c;a[f.toLowerCase()]=c;b.push(c)});return b}function h(a){if("number"==typeof a){if(!h[a])throw Error("invalid status code: "+a);return a}if("string"!=typeof a)throw new TypeError("code must be a number or string");var b=parseInt(a,10);if(!isNaN(b)){if(!h[b])throw Error("invalid status code: "+b);return b}b=h[a.toLowerCase()];if(!b)throw Error('invalid status message: "'+a+'"');return b};module.exports={_status:h,_STATUS_CODES:d,_codes:g,_empty:{[204]:!0,[205]:!0,[304]:!0},_redirect:{[300]:!0,[301]:!0,[302]:!0,[303]:!0,[305]:!0,[307]:!0,[308]:!0},_retry:{[502]:!0,[503]:!0,[504]:!0}};
 
 //# sourceMappingURL=statuses.js.map

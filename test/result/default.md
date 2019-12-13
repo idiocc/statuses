@@ -1,6 +1,20 @@
-## returns the correct output
-test
+## 403
+403
 
 /* expected */
-test
+403
+/**/
+
+## forbidden
+forbidden
+
+/* expected */
+403
+/**/
+
+## Forbidden
+forbidden
+
+/* expected */
+403
 /**/

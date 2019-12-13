@@ -1,13 +1,11 @@
 import makeTestSuite from '@zoroaster/mask'
 import Context from '../context'
-import statuses from '../../src'
+import status from '../../src'
 
 export default makeTestSuite('test/result/default', {
-  async getResults() {
-    const res = await statuses({
-      text: this.input,
-    })
-    return res
+  getResults() {
+    const res = status(this.input)
+    return `${res}`
   },
   context: Context,
 })
