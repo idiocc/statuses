@@ -12,7 +12,15 @@ function status(code) {
   return _status(code)
 }
 
+/**
+ * Returns an object which maps status codes to status messages, in the same format as the [Node.JS](https://nodejs.org/dist/latest/docs/api/http.html#http_http_status_codes) `http` module.
+ */
 const STATUS_CODES = _STATUS_CODES
+
+/**
+ * Returns an array of all the status codes as numbers.
+ * @type {!Array<number>}
+ */
 const codes = _codes
 const empty = _empty
 const redirect = _redirect

@@ -1,16 +1,14 @@
 ## API
 
-The package is available by importing its default function:
+The package is available by importing its default function and additional objects populated with status codes:
 
 ```js
-import statuses from '@goa/statuses'
+import status, { STATUS_CODES } from '@goa/statuses'
 ```
 
 %~%
 
-<typedef method="statuses">types/api.xml</typedef>
-
-<typedef>types/index.xml</typedef>
+<typedef method="status">types/api.xml</typedef>
 
 %EXAMPLE: example, ../src => @goa/statuses%
 %FORK example%

@@ -1,0 +1,8 @@
+<types namespace="_statuses">
+  <type type="!Object<string, string>" name="STATUS_CODES">
+    Returns an object which maps status codes to status messages, in the same format as the [Node.JS](https://nodejs.org/dist/latest/docs/api/http.html#http_http_status_codes) `http` module.
+  </type>
+  <type type="!Array<number>" name="codes">
+    Returns an array of all the status codes as numbers.
+  </type>
+</types>
