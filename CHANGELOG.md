@@ -1,3 +1,9 @@
+## 14 December 2019
+
+### [1.0.1](https://github.com/idiocc/statuses/compare/v1.0.0...v1.0.1)
+
+- [fix] Export the original status function without proxy.
+
 ## 13 December 2019
 
 ### [1.0.0](https://github.com/idiocc/statuses/compare/v0.0.0-pre...v1.0.0)
